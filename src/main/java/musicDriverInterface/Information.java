@@ -3,7 +3,7 @@ package musicDriverInterface;
 import java.util.ArrayList;
 import java.util.List;
 
-import dotnet4j.Tuple3;
+import dotnet4j.util.compat.Tuple3;
 
 
 public class Information {

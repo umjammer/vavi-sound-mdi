@@ -5,5 +5,5 @@ import java.util.Map;
 
 
 public class GD3Tag {
-    public Map<enmTag, String[]> dicItem = new HashMap<>();
+    public Map<Tag, String[]> items = new HashMap<>();
 }

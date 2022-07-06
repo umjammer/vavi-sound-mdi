@@ -5,15 +5,15 @@ import java.util.function.Function;
 import dotnet4j.io.Stream;
 
 
-public interface iPreprocessor extends iInterface {
+public interface ICompiler extends IInterface {
+    void init();
 
-    void Preprocess(
+    MmlDatum[] compile(
             Stream sourceMML,
-            Stream destMML,
             Function<String, Stream> appendFileReaderCallback
     );
 
-    void Init();
+    CompilerInfo getCompilerInfo();
 
-    PreprocessorInfo GetPreprocessorInfo();
+    void setCompileSwitch(Object... param);
 }

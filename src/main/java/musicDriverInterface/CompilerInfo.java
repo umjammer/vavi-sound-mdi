@@ -21,7 +21,7 @@ public class CompilerInfo extends Information {
     public int jumpRow;
     /** ジャンプポイントの桁数 */
     public int jumpCol;
-    public Object addtionalInfo;
+    public Object additionalInfo;
     /** 出力データのフォーマット形式(複数のフォーマットを出力できるコンパイラ向けの識別情報となります) */
     public String formatType;
 }

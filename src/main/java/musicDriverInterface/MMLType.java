@@ -1,6 +1,6 @@
 package musicDriverInterface;
 
-public enum enmMMLType {
+public enum MMLType {
     unknown,
     CompileSkip,      // !
     Tempo,            // T

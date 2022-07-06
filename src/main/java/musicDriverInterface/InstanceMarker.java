@@ -2,24 +2,24 @@ package musicDriverInterface;
 
 public class InstanceMarker {
 
-    public void LoadCompilerDll(String compilerDllFullPath) {
+    public void loadCompilerDll(String compilerDllFullPath) {
     }
 
-    public iCompiler GetCompiler(String compilerFullNameSpaceInstance) {
+    public ICompiler getCompiler(String compilerFullNameSpaceInstance) {
         return null;
     }
 
-    public void LoadDriverDll(String driverDllFullPath) {
+    public void loadDriverDll(String driverDllFullPath) {
     }
 
-    public iDriver GetDriver(String driverFullNameSpaceInstance) {
+    public IDriver getDriver(String driverFullNameSpaceInstance) {
         return null;
     }
 
-    public void LoadPreprocessorDll(String preprocessorDllFullPath) {
+    public void loadPreprocessorDll(String preprocessorDllFullPath) {
     }
 
-    public iPreprocessor GetPreprocessor(String preprocessorFullNameSpaceInstance) {
+    public IPreprocessor getPreprocessor(String preprocessorFullNameSpaceInstance) {
         return null;
     }
 }

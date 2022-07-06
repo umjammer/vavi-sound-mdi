@@ -1,7 +1,7 @@
 package musicDriverInterface;
 
 
-public enum enmTag {
+public enum Tag {
     NumberOfSongs,
 
     Title,
