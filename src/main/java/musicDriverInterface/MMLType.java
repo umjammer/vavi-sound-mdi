@@ -13,7 +13,7 @@ public enum MMLType {
     VolumeUp,         // )
     VolumeDown,       // (
     Length,           // l
-    LengthClock,      // #
+    LengthClock,      //#
     Pan,              // p
     Detune,           // D
     DirectMode,       // DON DOF

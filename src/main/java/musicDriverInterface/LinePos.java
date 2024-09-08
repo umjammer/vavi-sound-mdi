@@ -57,7 +57,7 @@ public class LinePos implements Serializable {
         this.aliesDepth = aliesDepth;
     }
 
-    public static void Clear(LinePos src) {
+    public static void clear(LinePos src) {
         if (src == null) return;
 
         src.document = null;
@@ -76,7 +76,7 @@ public class LinePos implements Serializable {
         src.aliesDepth = 0;
     }
 
-    public static void Move(LinePos src, LinePos des) {
+    public static void move(LinePos src, LinePos des) {
         if (src == null || des == null) return;
 
         des.document = src.document;
