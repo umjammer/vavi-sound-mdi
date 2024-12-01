@@ -2,81 +2,158 @@ package musicDriverInterface;
 
 public enum MMLType {
     unknown,
-    CompileSkip,      // !
-    Tempo,            // T
-    Instrument,       // @
-    Volume,           // v
-    TotalVolume,      // V
-    Octave,           // o
-    OctaveUp,         // >
-    OctaveDown,       // <
-    VolumeUp,         // )
-    VolumeDown,       // (
-    Length,           // l
-    LengthClock,      //#
-    Pan,              // p
-    Detune,           // D
-    DirectMode,       // DON DOF
-    PcmMode,          // m
-    PcmMap,           // mon mof
-    Gatetime,         // q
-    GatetimeDiv,      // Q
-    Envelope,         // E
-    ExtendChannel,    // EX
-    HardEnvelope,     // EH
-    LoopPoint,        // L
-    Repeat,           // [
-    RepeatEnd,        // ]
-    Renpu,            // {
-    RenpuEnd,         // }
-    RepertExit,       // /
-    Lfo,              // M
-    LfoSwitch,        // S
-    Y,                // y
-    Noise,            // w
-    NoiseToneMixer,   // P
-    KeyShift,         // K
-    AddressShift,     // A
-    MIDICh,           // CH
-    MIDIControlChange, // CC
-    Note,             // c d e f g a b
-    Rest,             // r
-    RestNoWork,       // R
-    Bend,             // _
-    Tie,              // &
-    TiePC,            // ^
-    TieMC,            // ~
-    ToneDoubler,      // , 0
-    Lyric,            // "
-    SusOnOff,         // so sf
-    JumpPoint,        // J
-    Velocity,         // U
-    SkipPlay,         // caret位置からの演奏のための特殊コマンド
-    DCSGCh3Freq,      // wf
-    TraceLocate,      // トレース機能向けロケータ
-    ClockCounter,     // C
-    RelativeVolumeSetting, //@v
-    Effect,           // X
-    Synchronous,      // *
-    Arpeggio,         // APON APOF AP
-    PhaseReset,       // PRON PROF
-    ForcedFnum,       // F
-    TraceUpdateStack, // トレース機能向け 情報スタック更新
-    //TracePop,       // トレース機能向け 情報スタックへpop
-    IDE,              // IDE 独自機能 識別のためのコマンド
-    PageDirectSend,   // PDON PDOF
-    KeyOnDelay,       // KD キーオンディレイ
-    HardEnvelopeSync, // HS.. Hardware envelope Sync
-    ReversePhase,     // PRV 逆位相
-    Modulation,       // モジュレーション
-    PartColor,        // パートの色
-    Portament,        // ポルタメント
-    ReplaceByParts_Start,// パート別リプレースコマンド開始
-    ReplaceByParts,      // パート別リプレースコマンド
-    ReplaceByParts_End,  // パート別リプレースコマンド終了
-    PartArpeggio_Start,  //パートアルペジオ開始
-    PartArpeggio_End, //パートアルペジオ終了
-    ResetPlaySync,    // 演奏中の同期パラメータリセット信号
-    RR15,             // TTON,TTOF
-    HardLFO,          // SoftLFOと別コマンドのドライバ向け
+    /** ! */
+    CompileSkip,
+    /** T */
+    Tempo,
+    /** @ */
+    Instrument,
+    /** v */
+    Volume,
+    /** V */
+    TotalVolume,
+    /** o */
+    Octave,
+    /** > */
+    OctaveUp,
+    /** < */
+    OctaveDown,
+    /** ) */
+    VolumeUp,
+    /** ( */
+    VolumeDown,
+    /** l */
+    Length,
+    /** # */
+    LengthClock,
+    /** p */
+    Pan,
+    /** D */
+    Detune,
+    /** DON DOF */
+    DirectMode,
+    /** m */
+    PcmMode,
+    /** mon mof */
+    PcmMap,
+    /** q */
+    Gatetime,
+    /** Q */
+    GatetimeDiv,
+    /** E */
+    Envelope,
+    /** EX */
+    ExtendChannel,
+    /** EH */
+    HardEnvelope,
+    /** L */
+    LoopPoint,
+    /** [ */
+    Repeat,
+    /** ] */
+    RepeatEnd,
+    /** { */
+    Renpu,
+    /** } */
+    RenpuEnd,
+    /** / */
+    RepertExit,
+    /** M */
+    Lfo,
+    /** S */
+    LfoSwitch,
+    /** y */
+    Y,
+    /** w */
+    Noise,
+    /** P */
+    NoiseToneMixer,
+    /** K */
+    KeyShift,
+    /** A */
+    AddressShift,
+    /** CH */
+    MIDICh,
+    /** CC */
+    MIDIControlChange,
+    /** c d e f g a b */
+    Note,
+    /** r */
+    Rest,
+    /** R */
+    RestNoWork,
+    /** _ */
+    Bend,
+    /** & */
+    Tie,
+    /** ^ */
+    TiePC,
+    /** ~ */
+    TieMC,
+    /** , 0 */
+    ToneDoubler,
+    /** " */
+    Lyric,
+    /** so sf */
+    SusOnOff,
+    /** J */
+    JumpPoint,
+    /** U */
+    Velocity,
+    /** Special commands for playing from the caret position */
+    SkipPlay,
+    /** wf */
+    DCSGCh3Freq,
+    /** Locator for trace function */
+    TraceLocate,
+    /** C */
+    ClockCounter,
+    /** \@v */
+    RelativeVolumeSetting,
+    /** X */
+    Effect,
+    /**  */
+    Synchronous,
+    /** APON APOF AP */
+    Arpeggio,
+    /** PRON PROF */
+    PhaseReset,
+    /** F */
+    ForcedFnum,
+    /** Updated information stack for trace function */
+    TraceUpdateStack,
+//    /** Pop to the trace function information stack */
+//    TracePop,
+    /** IDE-specific features Commands for identification */
+    IDE,
+    /** PDON PDOF */
+    PageDirectSend,
+    /** KD Key-on Delay */
+    KeyOnDelay,
+    /** HS.. Hardware envelope Sync */
+    HardEnvelopeSync,
+    /** PRV opposite phase */
+    ReversePhase,
+    /** Modulation */
+    Modulation,
+    /** Part Color */
+    PartColor,
+    /** Portamento */
+    Portament,
+    /** Part-by-part replace command start */
+    ReplaceByParts_Start,
+    /** Part-by-part replace commands */
+    ReplaceByParts,
+    /** Part-by-part replace command completed */
+    ReplaceByParts_End,
+    /** Part Arpeggio Start */
+    PartArpeggio_Start,
+    /** Part Arpeggio End */
+    PartArpeggio_End,
+    /** Synchronized parameter reset signal during playback */
+    ResetPlaySync,
+    /** TTON, TTOF */
+    RR15,
+    /** For SoftLFO and other command drivers */
+    HardLFO,
 }

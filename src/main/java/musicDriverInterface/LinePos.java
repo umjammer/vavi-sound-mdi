@@ -137,8 +137,8 @@ public class LinePos implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("document:%s srcMMLID:%s row:%s col:%s length:%s part:%s" +
-                " chip:%s chipIndex:%s chipNumber:%s ch:%s aliesName:%s aliesNextName:%s aliesDepth:%s",
+        return ("document:%s srcMMLID:%s row:%s col:%s length:%s part:%s" +
+                " chip:%s chipIndex:%s chipNumber:%s ch:%s aliesName:%s aliesNextName:%s aliesDepth:%s").formatted(
                 document, srcMMLID, row, col, length, part, chip, chipIndex, chipNumber, ch,
                 aliesName, aliesNextName, aliesDepth);
     }

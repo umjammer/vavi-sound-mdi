@@ -9,14 +9,14 @@ public class ChipDatum {
     public int port;
     public int address;
     public int data;
-    public long time;
+    public int time;
     public Object additionalData;
 
     public ChipDatum(int port, int address, int data) {
         this(port, address, data, 0, null);
     }
 
-    public ChipDatum(int port, int address, int data, long time, Object additionalData) {
+    public ChipDatum(int port, int address, int data, int time, Object additionalData) {
         this.port = port;
         assert address >= 0 : debug("address", address);
         this.address = address;
@@ -27,7 +27,7 @@ public class ChipDatum {
     }
 
     static String debug(Object... args) {
-        new Exception("*** DUMMY ***").printStackTrace();
+new Exception("*** DUMMY *** : " + args[0]).printStackTrace();
         return Arrays.stream(args).map(Object::toString).collect(Collectors.joining(", "));
     }
 }

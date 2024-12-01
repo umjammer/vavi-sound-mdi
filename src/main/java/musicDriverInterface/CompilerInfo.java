@@ -4,24 +4,24 @@ import java.util.List;
 
 
 public class CompilerInfo extends Information {
-    /** partタイプ(PMDDotNETの場合は"YM2608","FM3chex","PPZ8" */
+    /** Part type (For PMDDotNET, use "YM2608", "FM3chex", and "PPZ8"). */
     public List<String> partType;
-    /** part基準の絶対位置 (ドライバによっては全パートのリストができるわけではないので必要) */
+    /** Absolute position based on part (necessary because some drivers cannot list all parts) */
     public List<Integer> partNumber;
-    /** part名 */
+    /** part name */
     public List<String> partName;
     public List<Integer> totalCount;
     public List<Integer> loopCount;
     public List<Integer> bufferCount;
-    /** ジャンプポイントまでのクロック数 */
+    /** Clock count until jump point */
     public int jumpClock;
-    /** ジャンプしたチャンネル */
+    /** After jumped channel */
     public List<Integer> jumpChannel;
-    /** ジャンプポイントの行数 */
+    /** Jump-point's row number */
     public int jumpRow;
-    /** ジャンプポイントの桁数 */
+    /** Jump-point's column number */
     public int jumpCol;
     public Object additionalInfo;
-    /** 出力データのフォーマット形式(複数のフォーマットを出力できるコンパイラ向けの識別情報となります) */
+    /** The format of the output data (this serves as identification information for compilers that can output multiple formats) */
     public String formatType;
 }

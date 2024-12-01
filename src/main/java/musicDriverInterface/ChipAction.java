@@ -2,24 +2,25 @@ package musicDriverInterface;
 
 
 public interface ChipAction {
+
     /**
-     * チップ判断向け
+     * for chip determination
      */
     String getChipName();
 
     /**
-     * チップデータ送信向け
+     * for chip data transfer
      * @param cd
      */
     void writeRegister(ChipDatum cd);
 
     /**
-     * PCMデータ送信向け
+     * for PCM data transfer
      */
     void writePCMData(byte[] data, int startAddress, int endAddress);
 
     /**
-     * ウェイト向け
+     * for wait
      */
     void waitSend(long t1, int t2);
 }

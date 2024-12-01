@@ -19,7 +19,7 @@ public interface IDriver extends IInterface {
     //
 
     /**
-     * 演奏データ取得
+     * Acquiring performance data
      */
     MmlDatum[] getDATA();
 
@@ -36,25 +36,25 @@ public interface IDriver extends IInterface {
     //
 
     /**
-     * レンダリング開始
+     * Start Rendering
      *
      * @param renderingFreq    frame/sec
-     * @param chipMasterClocks 音源毎の周波数(音源名,周波数)
+     * @param chipMasterClocks Frequency of each sound source (sound source name, frequency)
      */
     void startRendering(int renderingFreq, Tuple<String, Integer>... chipMasterClocks);
 
     /**
-     * レンダリング終了
+     * Rendering Completed
      */
     void stopRendering();
 
     /**
-     * 1 frame 当たりのレンダリング
+     * Rendering per frame
      */
     void render();
 
     /**
-     * 音源へ出力
+     * Output to audio source
      *
      * @param reg
      */
@@ -65,50 +65,50 @@ public interface IDriver extends IInterface {
     //
 
     /**
-     * 曲の再生開始
+     * Start playing a song
      *
-     * @param musicNumber 曲番号 (0~)
+     * @param musicNumber Song Number (0~)
      */
     void startMusic(int musicNumber);
 
     /**
-     * 現在再生中の曲を停止
+     * Stop the currently playing song
      */
     void stopMusic();
 
     /**
-     * 現在再生中の曲をフェードアウト
+     * Fade out the currently playing song
      */
     void fadeOut();
 
     /**
-     * ドライバの内部情報を取得する
+     * Get internal information about the driver
      */
     Object getWork();
 
     /**
-     * 効果音の発音
+     * Sound effect pronunciation
      */
     void shotEffect();
 
     /**
-     * 演奏中か否か
+     * Playing or not
      *
-     * @return -1: エラー終了,  0: 終了,  1: 再生中
+     * @return -1: Error, 0: Finished, 1: Playing
      */
     int getStatus();
 
     /**
-     * 無限ループ系コマンドの最大回数
+     * Maximum number of infinite loop commands
      *
-     * @param loopCounter -1: 無限, 0 以上: 繰り返し回数
+     * @param loopCounter -1: infinite, 0 or more: number of repetitions
      */
     int setLoopCount(int loopCounter);
 
     /**
-     * 取得時点の曲のループ回数
+     * Number of times the song was looped at the time of acquisition
      *
-     * @return 回数
+     * @return Number of times
      */
     int getNowLoopCounter();
 

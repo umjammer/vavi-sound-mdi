@@ -39,6 +39,6 @@ public class MmlDatum implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("type:%s args:%s linePos:[ %s ]", type, args, linePos);
+        return "type:%s args:%s linePos:[ %s ]".formatted(type, args, linePos);
     }
 }
