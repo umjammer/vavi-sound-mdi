@@ -1,10 +1,12 @@
 package musicDriverInterface;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.ServiceLoader;
 import java.util.function.Function;
 
-import dotnet4j.util.compat.Tuple;
 import dotnet4j.io.Stream;
+import dotnet4j.util.compat.Tuple;
 
 
 public interface IDriver extends IInterface {
@@ -113,4 +115,13 @@ public interface IDriver extends IInterface {
     int getNowLoopCounter();
 
     void setDriverSwitch(Object... param);
+
+    static IDriver factory(String className) {
+        for (IDriver driver : ServiceLoader.load(IDriver.class)) {
+            if (driver.getClass().getName().equals(className)) {
+                return driver;
+            }
+        }
+        throw new NoSuchElementException(className);
+    }
 }
