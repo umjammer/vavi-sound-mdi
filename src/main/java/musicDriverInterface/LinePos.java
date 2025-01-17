@@ -1,9 +1,16 @@
 package musicDriverInterface;
 
 import java.io.Serializable;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+
+import static java.lang.System.getLogger;
 
 
 public class LinePos implements Serializable {
+
+    private static final Logger logger = getLogger(LinePos.class.getName());
+
     public Object document;
     public String srcMMLID;
     public int row;
@@ -36,12 +43,13 @@ public class LinePos implements Serializable {
         this.aliesDepth = 0;
     }
 
-    public LinePos(Object document, String srcMMLID, int row/* =-1*/, int col/* =-1*/, int length/* =-1*/, String part/* =""*/, String chip/* =""*/, int chipIndex/* =0*/, int chipNumber/* =0*/, int ch/* =-1*/) {
+    public LinePos(Object document, String srcMMLID, int row /* = -1 */, int col /* = -1 */, int length /* = -1 */, String part/* = "" */, String chip/* = "" */, int chipIndex/* = 0 */, int chipNumber/* = 0 */, int ch /* = -1 */) {
         this(document, srcMMLID, row, col, length, part, chip, chipIndex, chipNumber, ch, "", "", 0);
     }
 
-    public LinePos(Object document, String srcMMLID, int row/* =-1*/, int col/* =-1*/, int length/* =-1*/, String part/* =""*/, String chip/* =""*/, int chipIndex/* =0*/, int chipNumber/* =0*/, int ch/* =-1*/, String aliesName, String aliesNextName, int aliesDepth) {
+    public LinePos(Object document, String srcMMLID, int row /* = -1 */, int col /* = -1 */, int length /* = -1 */, String part/* = "" */, String chip/* = "" */, int chipIndex/* = 0 */, int chipNumber/* = 0 */, int ch /* = -1 */, String aliesName, String aliesNextName, int aliesDepth) {
         this.document = document;
+logger.log(Level.DEBUG, "" + document);
         this.srcMMLID = srcMMLID;
         this.row = row;
         this.col = col;
