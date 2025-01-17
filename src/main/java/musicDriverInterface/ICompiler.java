@@ -1,11 +1,14 @@
 package musicDriverInterface;
 
+import java.util.NoSuchElementException;
+import java.util.ServiceLoader;
 import java.util.function.Function;
 
 import dotnet4j.io.Stream;
 
 
 public interface ICompiler extends IInterface {
+
     void init();
 
     MmlDatum[] compile(
@@ -16,4 +19,13 @@ public interface ICompiler extends IInterface {
     CompilerInfo getCompilerInfo();
 
     void setCompileSwitch(Object... param);
+
+    static ICompiler factory(String className) {
+        for (ICompiler compiler : ServiceLoader.load(ICompiler.class)) {
+            if (compiler.getClass().getName().equals(className)) {
+                return compiler;
+            }
+        }
+        throw new NoSuchElementException(className);
+    }
 }
