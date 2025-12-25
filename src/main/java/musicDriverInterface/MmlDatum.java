@@ -7,7 +7,7 @@ import java.util.List;
 
 public class MmlDatum implements Serializable {
 
-    public MMLType type = MMLType.unknown;
+    public MMLType type = MMLType.Unknown;
     public List<Object> args = null;
     public int dat = 0;
     public LinePos linePos = null;

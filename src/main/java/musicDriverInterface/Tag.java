@@ -80,4 +80,7 @@ public enum Tag {
 
     SongSrcVersion,
     SongObjVersion,
+
+    // Embedded systems
+    Artwork,
 }

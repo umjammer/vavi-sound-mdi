@@ -1,7 +1,7 @@
 package musicDriverInterface;
 
 public enum MMLType {
-    unknown,
+    Unknown,
     /** ! */
     CompileSkip,
     /** T */
@@ -156,4 +156,14 @@ public enum MMLType {
     RR15,
     /** For SoftLFO and other command drivers */
     HardLFO,
+    /** Actual LFO change value */
+    LFODelta,
+    /** For VOP commands */
+    VOperator,
+    /** For TLOFSset command */
+    TLOFS,
+    /** VGON.VGOF */
+    VGuard,
+    /** PP */
+    PartPriority,
 }
