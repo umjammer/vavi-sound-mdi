@@ -18,16 +18,16 @@ public class ChipDatum {
 
     public ChipDatum(int port, int address, int data, int time, Object additionalData) {
         this.port = port;
-        assert address >= 0 : debug("address", address);
+        assert address >= 0 || address == -1 : debug("address", address);
         this.address = address;
-        assert data >= 0 : debug("data", data);
+        assert data >= 0 || address == -1 : debug("data", data);
         this.data = data;
         this.time = time;
         this.additionalData = additionalData;
     }
 
     static String debug(Object... args) {
-new Exception("*** DUMMY *** : " + args[0]).printStackTrace();
+new Exception("*** DUMMY *** : " + args[0]).printStackTrace(System.err);
         return Arrays.stream(args).map(Object::toString).collect(Collectors.joining(", "));
     }
 }
