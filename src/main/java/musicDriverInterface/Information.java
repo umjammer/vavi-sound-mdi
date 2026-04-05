@@ -6,7 +6,7 @@ import java.util.List;
 import dotnet4j.util.compat.Tuple3;
 
 
-public class Information {
-    public List<Tuple3<Integer, Integer, String>> warningList = new ArrayList<>();
+public abstract class Information {
+    public final List<Tuple3<Integer, Integer, String>> warningList = new ArrayList<>();
     public final List<Tuple3<Integer, Integer, String>> errorList = new ArrayList<>();
 }
