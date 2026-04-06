@@ -1,6 +1,7 @@
 package musicDriverInterface;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -98,6 +99,10 @@ public class MetaData {
     /** @return empty when not found value of the key */
     public String getFirst(Tag tag) {
         return items.containsKey(tag) ? items.get(tag).getFirst() : "";
+    }
+
+    public List<String> getAll(Tag tag) {
+        return items.getOrDefault(tag, Collections.emptyList());
     }
 
     public void add(Tag tag, String string) {
