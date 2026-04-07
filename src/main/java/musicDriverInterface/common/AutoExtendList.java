@@ -15,7 +15,7 @@ public class AutoExtendList<T> implements List<T> {
 
     private final List<T> buf = new ArrayList<>();
 
-    Class<T> clazz;
+    final Class<T> clazz;
     public AutoExtendList(Class<T> clazz) {
         this.clazz = clazz;
     }

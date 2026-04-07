@@ -1,5 +1,5 @@
 # musicDriverInterface
 
-ミュージックドライバー向け汎用的なインターフェイス定義  
+Defines a general-purpose interface for music drivers.  
 
 MIT
