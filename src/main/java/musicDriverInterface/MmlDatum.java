@@ -1,6 +1,7 @@
 package musicDriverInterface;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -119,7 +120,7 @@ public class MmlDatum implements Serializable {
         RelativeVolumeSetting,
         /** X */
         Effect,
-        /**  */
+        /** */
         Synchronous,
         /** APON APOF AP */
         Arpeggio,
@@ -200,7 +201,7 @@ public class MmlDatum implements Serializable {
     public MmlDatum(int dat, MMLType type, LinePos linePos, Object... args) {
         assert dat >= 0 : String.valueOf(dat); // TODO should be unsigned byte, add `&& dat < 255`
         this.type = type;
-        this.args = args != null ? Arrays.asList(args) : null;
+        this.args = args != null ? new ArrayList<>(Arrays.asList(args)) : null;
         this.linePos = linePos;
         this.dat = dat;
     }
