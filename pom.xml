@@ -59,9 +59,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.github.umjammer</groupId> <!-- moe.yo3explorer / com.github.umjammer -->
-      <artifactId>dotnet4j</artifactId>
-      <version>1.2.5</version>
+      <groupId>vavi</groupId> <!-- vavi / com.github.umjammer -->
+      <artifactId>vavi-sound-mdsound</artifactId>
+      <version>0.0.16-SNAPSHOT</version>
     </dependency>
 
     <dependency>

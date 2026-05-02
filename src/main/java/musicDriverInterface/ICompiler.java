@@ -1,10 +1,9 @@
 package musicDriverInterface;
 
+import java.io.InputStream;
 import java.util.NoSuchElementException;
 import java.util.ServiceLoader;
 import java.util.function.Function;
-
-import dotnet4j.io.Stream;
 
 
 public interface ICompiler extends IInterface {
@@ -12,8 +11,8 @@ public interface ICompiler extends IInterface {
     void init();
 
     MmlDatum[] compile(
-            Stream sourceMML,
-            Function<String, Stream> appendFileReaderCallback
+            InputStream sourceMML,
+            Function<String, InputStream> appendFileReaderCallback
     );
 
     CompilerInfo getCompilerInfo();

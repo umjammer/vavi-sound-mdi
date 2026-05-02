@@ -1,19 +1,19 @@
 package musicDriverInterface;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.ServiceLoader;
 import java.util.function.Function;
 
-import dotnet4j.io.Stream;
-import dotnet4j.util.compat.Tuple;
+import vavi.util.compat.Tuple;
 
 
 public interface IDriver extends IInterface {
 
     void init(List<ChipAction> chipsAction,
               MmlDatum[] srcBuf,
-              Function<String, Stream> appendFileReaderCallback,
+              Function<String, InputStream> appendFileReaderCallback,
               Object... additionalOption);
 
     //
