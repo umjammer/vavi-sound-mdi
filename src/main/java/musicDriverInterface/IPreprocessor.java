@@ -1,16 +1,15 @@
 package musicDriverInterface;
 
+import java.io.InputStream;
 import java.util.function.Function;
-
-import dotnet4j.io.Stream;
 
 
 public interface IPreprocessor extends IInterface {
 
     void Preprocess(
-            Stream sourceMML,
-            Stream destMML,
-            Function<String, Stream> appendFileReaderCallback
+            InputStream sourceMML,
+            InputStream destMML,
+            Function<String, InputStream> appendFileReaderCallback
     );
 
     void init();

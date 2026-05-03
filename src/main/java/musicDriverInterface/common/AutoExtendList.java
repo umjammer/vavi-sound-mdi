@@ -1,5 +1,6 @@
 package musicDriverInterface.common;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -15,9 +16,25 @@ public class AutoExtendList<T> implements List<T> {
 
     private final List<T> buf = new ArrayList<>();
 
-    final Class<T> clazz;
+    private final Class<T> clazz;
+
     public AutoExtendList(Class<T> clazz) {
         this.clazz = clazz;
+    }
+
+    @SuppressWarnings("unchecked")
+    private T createInstance() {
+        if (clazz == Integer.TYPE || clazz == Integer.class) {
+            return (T) Integer.valueOf(0);
+        } else if (clazz == Byte.TYPE || clazz == Byte.class) {
+            return (T) Byte.valueOf((byte) 0);
+        } else {
+            try {
+                return clazz.getDeclaredConstructor().newInstance();
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+                return null;
+            }
+        }
     }
 
     @Override
@@ -25,14 +42,7 @@ public class AutoExtendList<T> implements List<T> {
         if (adr >= buf.size()) {
             int size = adr + 1;
             for (int i = buf.size(); i < size; i++) {
-//logger.log(Level.TRACE, "add: " + d.getClass().getName());
-                if (clazz == Integer.TYPE) {
-                    buf.add((T) Integer.valueOf(0));
-                } else if (clazz == Byte.TYPE) {
-                    buf.add((T) Byte.valueOf((byte) 0));
-                } else {
-                    buf.add(null);
-                }
+                buf.add(createInstance());
             }
         }
         return buf.set(adr, d);
@@ -76,13 +86,7 @@ public class AutoExtendList<T> implements List<T> {
     @Override
     public T get(int adr) {
         if (adr >= buf.size()) {
-            if (clazz == Integer.TYPE || clazz == Integer.class) {
-                return (T) Integer.valueOf(0);
-            } else if (clazz == Byte.TYPE || clazz == Byte.class) {
-                return (T) Byte.valueOf((byte) 0);
-            } else {
-                return null;
-            }
+            return createInstance();
         }
         return buf.get(adr);
     }
@@ -155,5 +159,12 @@ public class AutoExtendList<T> implements List<T> {
     @Override
     public void clear() {
         buf.clear();
+    }
+
+    public void removeAllAfter(int index /* = 0 */) {
+        if (index < 0 || index >= buf.size()) return;
+        while (buf.size() > index) {
+            buf.removeLast();
+        }
     }
 }

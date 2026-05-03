@@ -3,7 +3,7 @@
 
   <groupId>vavi</groupId>
   <artifactId>vavi-sound-mdi</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.5</version>
 
   <build>
     <plugins>
@@ -17,6 +17,18 @@
             <testExclude>test/RealChip.java</testExclude>
           </testExcludes>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -53,15 +65,15 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.github.umjammer</groupId> <!-- com.github.umjammer / vavi -->
+      <groupId>com.github.umjammer</groupId> <!-- vavi / com.github.umjammer -->
       <artifactId>vavi-commons</artifactId>
       <version>1.1.16</version>
     </dependency>
 
     <dependency>
-      <groupId>com.github.umjammer</groupId> <!-- moe.yo3explorer / com.github.umjammer -->
-      <artifactId>dotnet4j</artifactId>
-      <version>1.2.5</version>
+      <groupId>com.github.umjammer</groupId> <!-- vavi / com.github.umjammer -->
+      <artifactId>vavi-sound-mdsound</artifactId>
+      <version>0.0.16</version>
     </dependency>
 
     <dependency>
