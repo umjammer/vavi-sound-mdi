@@ -15,6 +15,13 @@ this is a fork of [musicDriverInterface](https://github.com/kuma4649/musicDriver
 
 ## Usage
 
+### user
+
+- [vavi-sound-pmd](https://github.com/umjammer/vavi-sound-pmd)
+- [vavi-sound-moon](https://github.com/umjammer/vavi-sound-moon)
+- [vavi-sound-muap](https://github.com/umjammer/vavi-sound-muap)
+- [vavi-sound-mdsdrv](https://github.com/umjammer/vavi-sound-mdsdrv)
+
 ## References
 
  * vavi-sound-pmd
