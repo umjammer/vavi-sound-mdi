@@ -2,6 +2,7 @@ package musicDriverInterface;
 
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.ServiceLoader;
 import java.util.function.Function;
@@ -23,7 +24,7 @@ public interface IDriver extends IInterface {
     /**
      * Acquiring performance data
      */
-    MmlDatum[] getDATA();
+    MmlDatum[] getData();
 
     byte[] getPCMFromSrcBuf();
 
@@ -86,7 +87,7 @@ public interface IDriver extends IInterface {
     /**
      * Get internal information about the driver
      */
-    Object getWork();
+    Map<String, Object> getWork();
 
     /**
      * Sound effect pronunciation
