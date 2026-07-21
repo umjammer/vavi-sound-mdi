@@ -44,6 +44,7 @@ public interface IDriver extends IInterface {
      * @param renderingFreq    frame/sec
      * @param chipMasterClocks Frequency of each sound source (sound source name, frequency)
      */
+    @SuppressWarnings("unchecked")
     void startRendering(int renderingFreq, Tuple<String, Integer>... chipMasterClocks);
 
     /**

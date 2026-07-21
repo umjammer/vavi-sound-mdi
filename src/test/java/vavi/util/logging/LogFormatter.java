@@ -38,6 +38,7 @@ public class LogFormatter extends Formatter {
 
     public static void applyToRoot() {
         applyToRoot(new ConsoleHandler() {
+            @Override
             protected void setOutputStream(OutputStream out) throws SecurityException {
                 super.setOutputStream(System.out);
             }
