@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 public interface IPreprocessor extends IInterface {
 
-    void Preprocess(
+    void preprocess(
             InputStream sourceMML,
             InputStream destMML,
             Function<String, InputStream> appendFileReaderCallback

@@ -103,7 +103,7 @@ logger.log(Level.DEBUG, "" + document);
         des.aliesDepth = src.aliesDepth;
     }
 
-    public static LinePos Copy(LinePos src) {
+    public static LinePos copy(LinePos src) {
         if (src == null) return null;
 
         LinePos ret = new LinePos(src.document, src.srcMMLID, src.row,
