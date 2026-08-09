@@ -45,7 +45,7 @@ public class LogFormatter extends Formatter {
         });
     }
 
-    public static void applyToRoot(Handler handler) {
+    private static void applyToRoot(Handler handler) {
         handler.setFormatter(new LogFormatter());
         Logger root = Logger.getLogger("");
         root.setUseParentHandlers(false);

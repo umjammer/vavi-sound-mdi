@@ -9,7 +9,7 @@ public class ChipDatum {
     public int port;
     public int address;
     public int data;
-    public int time;
+    private int time;
     public Object additionalData;
 
     public ChipDatum(int port, int address, int data) {
@@ -26,7 +26,7 @@ public class ChipDatum {
         this.additionalData = additionalData;
     }
 
-    static String debug(Object... args) {
+    private static String debug(Object... args) {
 new Exception("*** DUMMY *** : " + args[0]).printStackTrace(System.err);
         return Arrays.stream(args).map(Object::toString).collect(Collectors.joining(", "));
     }

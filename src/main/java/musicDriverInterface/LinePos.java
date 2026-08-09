@@ -11,14 +11,14 @@ public class LinePos implements Serializable {
 
     private static final Logger logger = getLogger(LinePos.class.getName());
 
-    public Object document;
-    public String srcMMLID;
+    private Object document;
+    private String srcMMLID;
     public int row;
     public int col;
     public int length;
     public String part;
     public String chip;
-    public int chipIndex;
+    private int chipIndex;
     public int chipNumber;
     public int ch;
 
@@ -47,7 +47,7 @@ public class LinePos implements Serializable {
         this(document, srcMMLID, row, col, length, part, chip, chipIndex, chipNumber, ch, "", "", 0);
     }
 
-    public LinePos(Object document, String srcMMLID, int row /* = -1 */, int col /* = -1 */, int length /* = -1 */, String part/* = "" */, String chip/* = "" */, int chipIndex/* = 0 */, int chipNumber/* = 0 */, int ch /* = -1 */, String aliesName, String aliesNextName, int aliesDepth) {
+    private LinePos(Object document, String srcMMLID, int row /* = -1 */, int col /* = -1 */, int length /* = -1 */, String part/* = "" */, String chip/* = "" */, int chipIndex/* = 0 */, int chipNumber/* = 0 */, int ch /* = -1 */, String aliesName, String aliesNextName, int aliesDepth) {
         this.document = document;
 logger.log(Level.DEBUG, "" + document);
         this.srcMMLID = srcMMLID;
