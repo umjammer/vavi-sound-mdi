@@ -92,6 +92,8 @@ public class MetaData {
 
         // Embedded systems
         Artwork,
+
+        Comments,
     }
 
     private final Map<Tag, List<String>> items = new HashMap<>();
@@ -108,6 +110,10 @@ public class MetaData {
     public void add(Tag tag, String string) {
         items.putIfAbsent(tag, new ArrayList<>());
         items.get(tag).add(string);
+    }
+
+    public void setAll(Tag tag, List<String> strings) {
+        items.put(tag, strings);
     }
 
     public void set(Tag tag, String string) {
