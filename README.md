@@ -24,6 +24,6 @@ this is a fork of [musicDriverInterface](https://github.com/kuma4649/musicDriver
 
 ## References
 
- * vavi-sound-pmd
+ * [original](https://github.com/kuma4649/musicDriverInterface)
 
 ## TODO
